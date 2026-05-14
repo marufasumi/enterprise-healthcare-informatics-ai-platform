@@ -1,0 +1,35 @@
+tables:
+
+  bronze:
+    - patient_raw
+    - encounter_raw
+    - condition_raw
+    - observation_raw
+    - procedure_raw
+    - medication_request_raw
+    - immunization_raw
+    - careplan_raw
+    - allergy_intolerance_raw
+    - claim_raw
+
+  silver:
+    - patient_clean
+    - encounter_clean
+    - condition_clean
+    - observation_clean
+    - procedure_clean
+    - medication_request_clean
+    - immunization_clean
+    - careplan_clean
+    - allergy_intolerance_clean
+    - claim_clean
+
+  gold:
+    - patient_summary
+    - encounter_utilization_summary
+    - chronic_disease_summary
+    - medication_summary
+    - observation_vitals_labs_summary
+    - procedure_careplan_summary
+    - claim_cost_summary
+    - population_health_dashboard
