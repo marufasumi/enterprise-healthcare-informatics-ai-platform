@@ -1,0 +1,16 @@
+powerbi:
+
+  dashboard_tables:
+
+    - patient_summary
+    - encounter_utilization_summary
+    - chronic_disease_summary
+    - medication_summary
+    - observation_vitals_labs_summary
+    - procedure_careplan_summary
+    - claim_cost_summary
+    - population_health_dashboard
+
+  export_format: csv
+
+  refresh_strategy: manual
