@@ -1,0 +1,27 @@
+silver_transformations:
+
+  patient_clean:
+    operations:
+      - demographic_extraction
+      - address_normalization
+      - marital_status_standardization
+
+  encounter_clean:
+    operations:
+      - encounter_duration_calculation
+      - encounter_class_standardization
+
+  condition_clean:
+    operations:
+      - diagnosis_extraction
+      - chronic_disease_mapping
+
+  observation_clean:
+    operations:
+      - vital_sign_extraction
+      - laboratory_value_normalization
+
+  claim_clean:
+    operations:
+      - claim_cost_extraction
+      - claim_type_normalization
