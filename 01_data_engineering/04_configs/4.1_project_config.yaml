@@ -1,0 +1,27 @@
+project:
+  name: enterprise-healthcare-informatics-ai-platform
+  environment: databricks
+  architecture: medallion
+
+catalog:
+  name: healthcare_catalog
+
+schemas:
+  bronze: bronze
+  silver: silver
+  gold: gold
+
+storage:
+  raw_fhir_volume: /Volumes/healthcare_catalog/bronze/raw_fhir_files/
+
+technologies:
+  - Databricks
+  - PySpark
+  - Delta Lake
+  - Spark SQL
+  - FHIR R4
+
+pipeline:
+  bronze_enabled: true
+  silver_enabled: true
+  gold_enabled: true
