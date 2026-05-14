@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Databricks / Spark
+*.crc
+*.parquet
+*.delta
+*.snappy
+
+# Data folders
+data/raw/
+data/full_exports/
+
+# Environment
+.env
+venv/
+.env/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log

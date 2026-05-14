@@ -1,0 +1,12 @@
+pyspark
+delta-spark
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+mlflow
+streamlit
+plotly
+
