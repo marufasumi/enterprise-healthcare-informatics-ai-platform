@@ -1,0 +1,16 @@
+storage:
+
+  raw_fhir_files:
+    path: /Volumes/healthcare_catalog/bronze/raw_fhir_files/
+
+  bronze_tables:
+    format: delta
+
+  silver_tables:
+    format: delta
+
+  gold_tables:
+    format: delta
+
+  checkpoint_location:
+    path: /tmp/checkpoints/
