@@ -1,0 +1,29 @@
+gold_analytics:
+
+  patient_summary:
+    grain: patient_level
+
+  encounter_utilization_summary:
+    grain: patient_level
+
+  chronic_disease_summary:
+    grain: patient_level
+
+  medication_summary:
+    grain: patient_level
+
+  observation_vitals_labs_summary:
+    grain: patient_level
+
+  procedure_careplan_summary:
+    grain: patient_level
+
+  claim_cost_summary:
+    grain: patient_level
+
+  population_health_dashboard:
+    grain: patient_level
+    risk_categories:
+      - Low Risk
+      - Medium Risk
+      - High Risk
