@@ -1,84 +1,81 @@
-# Data Engineering Module
+# Enterprise Healthcare Informatics AI Platform
 
-## Purpose
+## Overview
 
-This module contains the full Data Engineering pipeline for the Enterprise Healthcare Informatics AI Platform.
-
-The pipeline uses Databricks, PySpark, Delta Lake, and FHIR R4 data to build a medallion architecture:
-
-Raw FHIR JSON → Bronze → Silver → Gold
-
-## Layers
-
-### Bronze Layer
-Raw FHIR resource ingestion from patient-level JSON bundles.
-
-### Silver Layer
-Cleaned and normalized healthcare tables.
-
-### Gold Layer
-Business-ready analytics and ML feature tables.
-
-## Technology Stack
+This project is a portfolio-grade enterprise healthcare analytics and clinical AI platform built using:
 
 - Databricks
 - PySpark
 - Delta Lake
-- Unity Catalog
-- FHIR R4
-- Medallion Architecture
+- FHIR R4 healthcare data
+- SQL analytics
+- Power BI
+- Machine Learning
+- MLOps architecture
 
-## Main Outputs
+The platform follows a Medallion Lakehouse Architecture:
 
-### Bronze Tables
-- patient_raw
-- encounter_raw
-- condition_raw
-- observation_raw
-- procedure_raw
-- medication_request_raw
-- immunization_raw
-- careplan_raw
-- allergy_intolerance_raw
-- claim_raw
+FHIR JSON → Bronze → Silver → Gold
 
-### Silver Tables
-- patient_clean
-- encounter_clean
-- condition_clean
-- observation_clean
-- procedure_clean
-- medication_request_clean
-- immunization_clean
-- careplan_clean
-- allergy_intolerance_clean
-- claim_clean
+---
 
-### Gold Tables
-- patient_summary
-- encounter_utilization_summary
-- chronic_disease_summary
-- medication_summary
-- observation_vitals_labs_summary
-- procedure_careplan_summary
-- claim_cost_summary
-- population_health_dashboard
+# Project Modules
 
-## Dataset Scale
+## 1. Data Engineering
 
-Final processed dataset:
+Enterprise healthcare lakehouse pipeline built using:
+- Databricks
+- Spark
+- Delta Lake
+- FHIR resources
+- Bronze/Silver/Gold architecture
 
-- 555 patients
-- 27,812 encounters
-- 17,253 conditions
-- 131,703 observations
-- 38,528 procedures
-- 24,256 medication requests
-- 8,100 immunizations
-- 1,831 care plans
-- 499 allergy records
-- 52,068 claims
+### Key Features
 
-## Project Status
+- scalable FHIR ingestion
+- healthcare ETL pipelines
+- patient-level feature engineering
+- healthcare cost analytics
+- population health analytics
+- enterprise Gold dashboard layer
 
-Data Engineering pipeline completed through Gold analytics layer.ß
+---
+
+## 2. Analytics / BI
+
+Healthcare business intelligence layer using:
+- SQL analytics
+- Power BI dashboards
+- operational KPIs
+- utilization analytics
+- chronic disease reporting
+- financial analytics
+
+---
+
+## 3. Machine Learning
+
+Clinical AI and predictive modeling layer:
+- risk stratification
+- chronic disease prediction
+- healthcare cost prediction
+- patient risk scoring
+- MLflow
+- model serving
+- MLOps
+
+---
+
+# Architecture
+
+```text
+FHIR JSON Files
+        ↓
+Bronze Layer
+(raw healthcare resources)
+        ↓
+Silver Layer
+(clean normalized healthcare tables)
+        ↓
+Gold Layer
+(business analytics + ML feature store)
