@@ -1,0 +1,12 @@
+catalog:
+  name: healthcare_catalog
+
+schemas:
+  bronze:
+    description: raw healthcare FHIR ingestion layer
+
+  silver:
+    description: normalized healthcare analytics layer
+
+  gold:
+    description: business analytics and ML feature layer
