@@ -1,0 +1,49 @@
+bronze_ingestion:
+
+  source_format: json
+
+  multiline_json: true
+
+  ingestion_mode: overwrite
+
+  resources:
+
+    patient:
+      source_file: patient.ndjson
+      target_table: patient_raw
+
+    encounter:
+      source_file: encounter.ndjson
+      target_table: encounter_raw
+
+    condition:
+      source_file: condition.ndjson
+      target_table: condition_raw
+
+    observation:
+      source_file: observation.ndjson
+      target_table: observation_raw
+
+    procedure:
+      source_file: procedure.ndjson
+      target_table: procedure_raw
+
+    medication_request:
+      source_file: medication_request.ndjson
+      target_table: medication_request_raw
+
+    immunization:
+      source_file: immunization.ndjson
+      target_table: immunization_raw
+
+    careplan:
+      source_file: careplan.ndjson
+      target_table: careplan_raw
+
+    allergy_intolerance:
+      source_file: allergy_intolerance.ndjson
+      target_table: allergy_intolerance_raw
+
+    claim:
+      source_file: claim.ndjson
+      target_table: claim_raw
