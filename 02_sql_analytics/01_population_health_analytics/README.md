@@ -180,6 +180,8 @@ Examples:
 - encounter burden
 - high utilizers
 - service utilization
+ ![Project Overview](images/chronic_disease_analytics.png)
+  
 
 ---
 
