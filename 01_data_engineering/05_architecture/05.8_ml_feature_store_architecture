@@ -1,0 +1,19 @@
+# ML Feature Store Architecture
+
+```text
+Gold Analytics Tables
+        ↓
+population_health_dashboard
+        ↓
+Feature Store
+        ↓
+ML Models
+        ↓
+Serving
+```
+
+Future:
+
+- MLflow
+- Model Registry
+- Monitoring
