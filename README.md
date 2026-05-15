@@ -84,3 +84,7 @@ Gold Layer
 # Architecture Overview
 
 ![Architecture Overview](images/de_architecture.png)
+
+# Architecture Overview
+
+![Architecture Overview](01_data_engineering/05_architecture/images/de_architecture.png)
