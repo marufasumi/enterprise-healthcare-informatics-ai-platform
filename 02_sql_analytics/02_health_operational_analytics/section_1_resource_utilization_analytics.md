@@ -1,83 +1,117 @@
-# Section 1: Resource Utilization Analytics
+# Resource Utilization Analytics
 
 Notebook:
 
 `22_sql_healthcare_operations_analytics`
 
+Domain:
+
+Healthcare Operations Analytics
+
+Data Layer:
+
+Gold Layer Analytics
+
+Primary Table:
+
+`healthcare_catalog.gold.population_health_dashboard`
+
 Status:
 
-Completed ✅
+Completed
 
 ---
 
-# Overview
+# Objective
 
-This section analyzes healthcare resource consumption patterns across patient populations.
+Evaluate healthcare resource consumption patterns across patient populations to identify:
 
-The goal is to identify:
+- high-utilization cohorts
+- operational burden drivers
+- multimorbidity impact
+- utilization concentration
+- populations requiring targeted intervention
 
-- High utilization populations
-- Operational burden drivers
-- Resource-intensive patient groups
-- Relationships between risk, age, chronic disease burden, and healthcare utilization
+This analysis supports:
 
-Resource utilization is a major component of:
-
-- Population Health Management
-- Healthcare Operations
-- Care Coordination
-- Utilization Management
-- Hospital Capacity Planning
-- Value-Based Care
+- population health management
+- hospital operations
+- utilization management
+- care coordination
+- value-based care initiatives
 
 ---
 
-# Input Table
+# Data Sources
 
-Primary Gold Layer Table:
+Input Table:
 
 ```text
 healthcare_catalog.gold.population_health_dashboard
 ```
 
-Contains:
+Included metrics:
 
-- demographics
-- encounters
+### Demographics
+
+- age
+- gender
+- location
+- marital status
+
+### Utilization Metrics
+
+- total encounters
+- emergency encounters
+- inpatient encounters
+- ambulatory encounters
+- encounter duration
+
+### Clinical Metrics
+
 - chronic disease burden
-- risk categories
-- utilization metrics
-- claims cost
-- medications
-- observations
+- medication burden
+- risk indicators
+
+### Financial Metrics
+
+- claim costs
+- pharmacy costs
+- institutional costs
 
 ---
 
-# Business Questions
+# Analytical Scope
 
-This section answers:
+This section evaluates relationships between:
 
-1. Do high-risk patients consume more healthcare resources?
+```text
+Risk Category
+            ↓
+Healthcare Utilization
 
-2. Which age groups generate highest utilization?
+Age
+            ↓
+Healthcare Utilization
 
-3. Does chronic disease burden increase utilization?
+Chronic Disease Burden
+            ↓
+Healthcare Utilization
 
-4. Who are the highest healthcare utilizers?
+High Utilizers
+            ↓
+Operational Burden
+```
 
 ---
 
-# Analyses Performed
+# Analysis 1
 
----
-
-## Query 1.1
-
-### Risk Category vs Resource Utilization
+## Population Health Risk vs Resource Utilization
 
 Objective:
 
-Determine whether higher-risk populations consume more healthcare resources.
+Measure utilization burden across risk categories.
 
 Metrics:
 
@@ -85,135 +119,154 @@ Metrics:
 - emergency encounters
 - inpatient encounters
 
-### Key Findings
+### Results
 
-| Risk Group | Avg Encounters | Avg Emergency | Avg Inpatient |
-|------------|----------------|---------------|---------------|
-| High Risk | 122 | 5.86 | 6.38 |
+| Risk Category | Avg Encounters | Avg Emergency | Avg Inpatient |
+|---------------|---------------:|---------------:|---------------:|
+| High Risk | 122.00 | 5.86 | 6.38 |
 | Medium Risk | 53.13 | 1.70 | 0.84 |
 | Low Risk | 24.87 | 0.73 | 0.05 |
 
-### Insight
+### Key Finding
 
-High-risk populations consume approximately 5x more healthcare encounters than low-risk populations.
+High-risk populations demonstrate substantially elevated healthcare utilization.
+
+Observed utilization:
+
+```text
+High Risk ≈ 5x Low Risk utilization
+```
 
 Implication:
 
-High-risk groups drive operational burden.
+Clinical risk concentration contributes significantly to operational burden.
 
 ---
 
-## Query 1.2
+# Analysis 2
 
-### Age Group vs Resource Utilization
+## Age Group vs Resource Utilization
 
 Objective:
 
-Analyze utilization patterns across age groups.
+Assess utilization variation across age populations.
 
-Age categories:
+Age segmentation:
 
 - Pediatric
 - Adult
 - Senior
 
-### Findings
+### Results
 
 | Age Group | Avg Encounters | Avg Emergency | Avg Inpatient |
-|-----------|----------------|---------------|---------------|
+|-----------|---------------:|---------------:|---------------:|
 | Senior | 88.84 | 3.13 | 2.94 |
 | Adult | 42.10 | 1.61 | 0.87 |
 | Pediatric | 18.24 | 0.68 | 0.01 |
 
-### Insight
+### Key Finding
 
-Healthcare utilization increases significantly with age.
+Healthcare utilization increases progressively with age.
 
-Senior populations create disproportionate utilization burden.
+Senior populations demonstrate the highest:
 
----
+- encounter burden
+- emergency utilization
+- admission burden
 
-## Query 1.3
+Implication:
 
-### Chronic Disease Burden vs Utilization
-
-Objective:
-
-Evaluate impact of multimorbidity on healthcare utilization.
-
-### Findings
-
-Patients with:
-
-0 chronic diseases:
-
-Average encounters:
-
-21.54
-
-Patients with:
-
-6 chronic diseases:
-
-Average encounters:
-
-415.50
-
-### Insight
-
-Multimorbidity strongly increases:
-
-- encounters
-- emergency use
-- inpatient burden
+Aging populations generate elevated operational demand.
 
 ---
 
-## Query 1.4
+# Analysis 3
 
-### High Utilizer Identification
+## Chronic Disease Burden vs Resource Utilization
 
 Objective:
 
-Identify patients with extreme healthcare utilization.
+Measure impact of multimorbidity on utilization.
 
-Metrics analyzed:
+### Results Summary
 
-- total encounters
-- chronic disease burden
-- risk level
-- claim cost
+| Chronic Diseases | Avg Encounters |
+|-----------------|----------------:|
+| 0 | 21.54 |
+| 1 | 36.46 |
+| 2 | 45.10 |
+| 3 | 54.29 |
+| 4 | 106.05 |
+| 5 | 139.27 |
+| 6 | 415.50 |
 
-### Major Findings
+### Key Finding
 
-Top utilizers showed:
+Utilization increases sharply with chronic disease burden.
 
-- High Risk status
-- Advanced age
-- Multiple chronic diseases
-- Very high claim costs
-
-Example:
+Observed relationship:
 
 ```text
-705 encounters
-↓
-$13.5M claim cost
+Increasing multimorbidity
+            ↓
+Higher encounters
+            ↓
+Higher admission burden
+            ↓
+Greater resource consumption
 ```
 
-### Insight
+Implication:
 
-A small population drives disproportionate healthcare workload.
-
-This follows:
-
-80/20 utilization principle
+Patients with multiple chronic conditions drive healthcare demand.
 
 ---
 
-# Overall Findings
+# Analysis 4
 
-Resource utilization is concentrated among:
+## High Utilizer Identification
+
+Objective:
+
+Identify populations generating disproportionate operational burden.
+
+Characteristics observed among highest utilizers:
+
+- advanced age
+- elevated risk category
+- multimorbidity
+- high claims burden
+
+Representative examples:
+
+```text
+Patient:
+Age = 111
+Chronic Diseases = 6
+Encounters = 705
+Total Claims = $13.5M
+
+Patient:
+Age = 97
+Chronic Diseases = 4
+Encounters = 1563
+Total Claims = $2.19M
+```
+
+### Key Finding
+
+Healthcare utilization is highly concentrated among a small subset of patients.
+
+Implication:
+
+Operational workload follows utilization concentration patterns.
+
+---
+
+# Operational Insights
+
+Resource utilization is disproportionately driven by:
 
 ✓ High-risk populations
 
@@ -223,86 +276,69 @@ Resource utilization is concentrated among:
 
 ✓ High-cost patients
 
-These groups generate substantial operational burden.
-
 ---
 
-# Healthcare Operations Insights
+# Potential Operational Interventions
 
-Potential interventions:
+Healthcare systems may target:
 
-- Care coordination programs
-- Chronic disease management
-- Preventive outreach
-- Population health management
-- Utilization reduction programs
+- chronic disease management programs
+- care coordination initiatives
+- preventive outreach
+- utilization reduction strategies
+- high-risk patient monitoring
 
 ---
 
 # Executive Summary
 
-This analysis demonstrates that healthcare utilization is highly concentrated among small high-risk populations.
+Resource utilization within the population is highly concentrated among older, high-risk, multimorbidity patients.
 
-Targeting these groups may improve:
+These cohorts generate elevated:
 
+- encounter burden
+- emergency utilization
+- inpatient utilization
+- operational workload
+
+Targeted intervention strategies may improve:
+
+- healthcare efficiency
 - resource allocation
-- hospital workload
-- cost reduction
-- patient outcomes
+- care delivery
+- cost containment
 
 ---
 
-# SQL Concepts Used
+# Technologies Used
 
-This section practiced:
-
-```sql
-SELECT
-
-GROUP BY
-
-AVG()
-
-COUNT()
-
-MIN()
-
-MAX()
-
-ORDER BY
-
-CASE WHEN
-
-LIMIT
-```
+- Databricks SQL
+- Delta Lake
+- Spark SQL
+- Medallion Architecture
+- Gold Layer Analytics
 
 ---
 
-# Interview Topics Covered
+# Output Artifacts
 
-Healthcare analytics interviews may ask:
+Generated KPIs:
 
-- How do you identify high utilizers?
-- What populations drive hospital burden?
-- How does multimorbidity affect utilization?
-- How would you reduce operational burden?
+- utilization by risk
+- utilization by age
+- utilization by multimorbidity
+- high utilizer identification
+- operational burden metrics
 
-This section provides examples to answer those questions.
+Downstream consumers:
 
----
-
-# Outputs Generated
-
-Resource utilization KPIs
-
-Operational burden metrics
-
-High-utilizer rankings
-
-Population segmentation insights
+- executive dashboards
+- healthcare operations reporting
+- population health analytics
+- predictive modeling pipelines
 
 ---
 
 Status:
 
-Section Complete ✅
+Resource Utilization Analytics Completed
