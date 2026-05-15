@@ -70,20 +70,15 @@ Clinical AI and predictive modeling layer:
 
 ```text
 FHIR JSON Files
-        ↓
+↓
 Bronze Layer
-(raw healthcare resources)
-        ↓
+↓
 Silver Layer
-(clean normalized healthcare tables)
-        ↓
+↓
 Gold Layer
-(business analytics + ML feature store)
-
+```
 
 # Architecture Overview
 
 ![Architecture Overview](01_data_engineering/05_architecture/images/de_architecture.png)
-
-
 
