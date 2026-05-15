@@ -169,6 +169,8 @@ Examples:
 - chronic disease burden
 - disease-cost relationships
 
+ ![Project Overview](images/chronic_disease_analytics.png)
+
 ---
 
 ## Utilization Analytics
