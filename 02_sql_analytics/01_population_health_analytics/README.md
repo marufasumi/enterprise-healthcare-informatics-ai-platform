@@ -1,4 +1,5 @@
 
 # Project Overview
 
-![Project Overview](infographic_dashboard.png)
+![Project Overview](images/infographic_dashboard.png)
+
