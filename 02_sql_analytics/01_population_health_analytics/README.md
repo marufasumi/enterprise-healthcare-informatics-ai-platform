@@ -9,93 +9,92 @@ Enterprise Healthcare SQL Analytics using Population Health Data
 
 ---
 
-# Project Overview
+# Population Health Analytics Platform — SQL Module
 
-This module focuses on learning SQL through real-world healthcare analytics scenarios.
+Enterprise Healthcare Analytics using integrated patient-level population health data.
 
-Instead of practicing SQL on toy datasets, this project uses integrated healthcare Gold-layer tables to answer business questions related to:
+---
 
-- population health
+# Overview
+
+This module performs healthcare analytics on a unified population health dataset to generate insights related to:
+
+- patient demographics
+- chronic disease burden
+- healthcare utilization
 - healthcare spending
 - risk stratification
-- chronic disease burden
-- utilization analytics
-- demographic analysis
 - financial analytics
+- population segmentation
 
-The notebook combines SQL learning with healthcare business thinking.
-
----
-
-# Project Goals
-
-Main objectives:
-
-Learn SQL concepts:
-
-```text
-SELECT
-WHERE
-GROUP BY
-HAVING
-JOIN
-Subquery
-CTE
-VIEW
-Window Functions
-```
-
-Apply SQL to healthcare analytics:
-
-```text
-Patient demographics
-
-Risk analysis
-
-Population segmentation
-
-Healthcare cost analysis
-
-Utilization analysis
-```
-
-Generate business insights:
-
-```text
-Who are high-risk patients?
-
-Who drives healthcare spending?
-
-Which populations need intervention?
-```
+The analyses produce business-ready metrics suitable for dashboard reporting, healthcare operations, and downstream predictive modeling.
 
 ---
 
-# Dataset Used
+# Project Objectives
 
-Primary dataset:
+The module addresses healthcare questions such as:
+
+### Population Analytics
+
+- How large is the patient population?
+- What are demographic characteristics?
+- What age groups dominate?
+
+---
+
+### Risk Analytics
+
+- Which patients belong to High Risk populations?
+- What is risk distribution across the population?
+- Which demographics show elevated risk?
+
+---
+
+### Financial Analytics
+
+- Which patients drive healthcare spending?
+- How concentrated are healthcare costs?
+- Which groups contribute most to total spending?
+
+---
+
+### Chronic Disease Analytics
+
+- What is chronic disease burden?
+- How many diabetic patients exist?
+- How does disease burden relate to spending?
+
+---
+
+### Utilization Analytics
+
+- Which patients have highest encounter counts?
+- Which populations show elevated healthcare utilization?
+
+---
+
+# Dataset
+
+Primary table:
 
 ```sql
 healthcare_catalog.gold.population_health_dashboard
 ```
 
-Integrated healthcare Gold tables:
+Integrated sources include:
 
 ```text
 patient_summary
-
 claim_cost_summary
-
-medication_summary
-
 encounter_utilization_summary
-
+medication_summary
 chronic_disease_summary
-
 observation_vitals_labs_summary
-
 procedure_careplan_summary
 ```
+
+The Gold layer provides patient-level business-ready analytics data.
 
 ---
 
@@ -111,171 +110,117 @@ sql_analytics/
 │      21_sql_population_health_analytics
 │      22_sql_utilization_and_financial_analytics
 │
-├── images/
-│      risk_distribution_chart.png
-│      age_group_distribution.png
-│      spending_by_cost_category.png
-│      sql_execution_order.png
-│      sql_window_functions.png
-│
 ├── docs/
-│      01_project_overview.md
-│      02_dataset_description.md
-│      03_business_questions.md
-│      04_sql_learning_summary.md
-│      05_population_health_analytics_summary.md
-│      06_sql_cheatsheet_notebook21.md
-│      07_healthcare_business_insights.md
-│      08_window_functions_notes.md
-│      09_interview_questions_notebook21.md
-│      10_data_dictionary.md
-│      11_sql_best_practices.md
-│      12_notebook21_execution_guide.md
-│      13_notebook21_summary.md
+│      project_overview
+│      dataset_description
+│      business_questions
+│      healthcare_business_insights
+│      execution_guides
+│      data_dictionary
+│
+├── images/
+│      population_health_overview.png
+│      risk_distribution_chart.png
+│      spending_by_cost_category.png
+│      notebook_workflow.png
 ```
 
 ---
 
-# SQL Topics Covered
+# Analytics Performed
 
-Notebook 21 covers:
-
-## Beginner SQL
-
-```sql
-SELECT
-LIMIT
-WHERE
-ORDER BY
-```
+The module covers several healthcare analytics domains.
 
 ---
 
-## Aggregations
-
-```sql
-COUNT()
-
-SUM()
-
-AVG()
-
-MIN()
-
-MAX()
-```
-
----
-
-## Group Analytics
-
-```sql
-GROUP BY
-
-HAVING
-
-DISTINCT
-```
-
----
-
-## Conditional Logic
-
-```sql
-CASE WHEN
-```
-
----
-
-## Relational SQL
-
-```sql
-INNER JOIN
-
-LEFT JOIN
-```
-
----
-
-## Intermediate SQL
-
-```sql
-Subqueries
-
-CTE
-
-VIEW
-```
-
----
-
-## Advanced SQL
-
-```sql
-ROW_NUMBER()
-
-RANK()
-
-DENSE_RANK()
-
-PARTITION BY
-```
-
----
-
-# Business Questions Answered
+## Population Health Analytics
 
 Examples:
 
-### Population Questions
-
-- How many patients exist?
-- What is average age?
-- What is risk distribution?
-
----
-
-### Financial Questions
-
-- Who are highest-cost patients?
-- Which populations drive spending?
+- patient count
+- average age
+- age distribution
+- demographic segmentation
 
 ---
 
-### Chronic Disease Questions
+## Risk Stratification Analytics
 
-- How many diabetic patients exist?
-- Does disease burden increase cost?
+Examples:
 
----
-
-### Risk Questions
-
-- How many High Risk patients exist?
-- Which demographics show elevated risk?
+- Low Risk populations
+- Medium Risk populations
+- High Risk populations
 
 ---
 
-# Key Results
+## Financial Analytics
+
+Examples:
+
+- spending distribution
+- high-cost patients
+- claim burden
+
+---
+
+## Chronic Disease Analytics
+
+Examples:
+
+- diabetes prevalence
+- chronic disease burden
+- disease-cost relationships
+
+---
+
+## Utilization Analytics
+
+Examples:
+
+- encounter burden
+- high utilizers
+- service utilization
+
+---
+
+## Comparative Analytics
+
+Examples:
+
+- patients above average spending
+- population comparisons
+
+---
+
+## Ranking Analytics
+
+Examples:
+
+- highest-cost patients
+- segmented rankings
+- cost rankings by demographic groups
+
+---
+
+# Key Findings
 
 Population statistics:
 
 ```text
 Total Patients = 555
 
-Average Age = 46.19
+Average Age = 46.19 years
 
-Minimum Age = 4
-
-Maximum Age = 114
+Age Range = 4–114 years
 ```
 
 ---
 
 Risk distribution:
 
-| Risk Category | Count |
-|---------------|------:|
+| Risk Category | Patient Count |
+|---------------|---------------:|
 | Low Risk | 247 |
 | Medium Risk | 231 |
 | High Risk | 77 |
@@ -284,11 +229,11 @@ Risk distribution:
 
 Age distribution:
 
-| Group | Count |
-|-------|------:|
+| Age Group | Count |
+|-----------|------:|
 | Adult | 339 |
-| Senior |136 |
-| Pediatric |80 |
+| Senior | 136 |
+| Pediatric | 80 |
 
 ---
 
@@ -300,13 +245,13 @@ Diabetes burden:
 
 ---
 
-Major financial insight:
+Major insight:
 
-High-cost populations drive most healthcare spending.
+A relatively small high-cost population contributes disproportionately to total healthcare spending.
 
 ---
 
-# Example Visualizations
+# Example Outputs
 
 ## Population Health Workflow
 
@@ -322,44 +267,40 @@ High-cost populations drive most healthcare spending.
 
 ## Spending Distribution
 
-![Cost Distribution](images/spending_by_cost_category.png)
+![Spending Distribution](images/spending_by_cost_category.png)
 
 ---
 
-## SQL Learning Roadmap
+# Business Insights Generated
 
-![SQL Learning](images/healthcare_sql_learning_path.png)
+The analyses support decisions related to:
+
+- resource allocation
+- risk intervention
+- chronic disease management
+- healthcare cost reduction
+- utilization management
+- population health planning
 
 ---
 
-# Skills Demonstrated
+# Deliverables Produced
 
-This project demonstrates:
+Outputs include:
 
-### SQL
+✓ population health KPIs
 
-- advanced SQL
-- joins
-- window functions
-- CTEs
+✓ risk segmentation
 
-### Healthcare Analytics
+✓ financial metrics
 
-- population health
-- risk analytics
-- utilization analytics
+✓ utilization metrics
 
-### Business Intelligence
+✓ healthcare business insights
 
-- KPI generation
-- segmentation
-- dashboard metrics
+✓ dashboard-ready summaries
 
-### Analytics Engineering
-
-- reusable SQL
-- validation
-- documentation
+✓ documentation
 
 ---
 
@@ -367,41 +308,35 @@ This project demonstrates:
 
 Detailed documentation available:
 
-| File | Purpose |
-|------|----------|
-| 01_project_overview | Project overview |
-| 03_business_questions | Business questions answered |
-| 06_sql_cheatsheet | SQL revision |
-| 08_window_functions_notes | Advanced SQL |
-| 09_interview_questions | Interview preparation |
-| 10_data_dictionary | Healthcare column definitions |
+| File | Description |
+|------|-------------|
+| project_overview | Module overview |
+| dataset_description | Dataset explanation |
+| business_questions | Healthcare questions answered |
+| healthcare_business_insights | Major findings |
+| data_dictionary | Variable definitions |
+| execution_guide | Reproducibility instructions |
 
 ---
 
-# Learning Outcome
+# Downstream Applications
 
-After completing this module:
-
-You should understand:
+Outputs from this module support:
 
 ```text
-Healthcare SQL
+Dashboards
 
 ↓
 
-Population Analytics
+Predictive Modeling
 
 ↓
 
-Business Intelligence
+Machine Learning
 
 ↓
 
-Advanced SQL
-
-↓
-
-Predictive Modeling Preparation
+Clinical AI Applications
 ```
 
 ---
@@ -414,26 +349,26 @@ Proceed to:
 22_sql_utilization_and_financial_analytics
 ```
 
-Goal:
+Focus:
 
-Deeper healthcare utilization analysis and financial analytics.
+Advanced healthcare utilization and financial analytics.
 
 ---
 
-# Author
+# Platform Context
 
-Enterprise Healthcare Informatics Platform
-
-Modules:
+Part of:
 
 ```text
+Enterprise Healthcare Informatics Platform
+
 Data Engineering
-
+↓
 SQL Analytics
-
+↓
 Population Health Analytics
-
+↓
 Machine Learning
-
+↓
 Clinical AI
 ```
