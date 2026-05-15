@@ -1,11 +1,11 @@
 
-# Project Overview
-
-![Project Overview](images/infographic_dashboard.png)
-
 # SQL Population Health Analytics
 
 Enterprise Healthcare SQL Analytics using Population Health Data
+
+
+![Project Overview](images/infographic_dashboard.png)
+
 
 ---
 
