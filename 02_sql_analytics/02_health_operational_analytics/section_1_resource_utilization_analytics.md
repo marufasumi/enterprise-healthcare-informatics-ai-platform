@@ -1,4 +1,14 @@
 # Resource Utilization Analytics
+# Key Utilization Trends
+
+The chart below highlights increasing healthcare utilization among:
+
+- higher-risk populations
+- older populations
+
+These findings support observed concentration of operational burden.
+
+![Resource Utilization Trends](images/resource_utilization_chart.png)
 
 Notebook:
 
