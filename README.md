@@ -66,7 +66,7 @@ Clinical AI and predictive modeling layer:
 
 ---
 
-# Architecture
+# Architecture Overview
 
 ```text
 FHIR JSON Files
@@ -78,7 +78,6 @@ Silver Layer
 Gold Layer
 ```
 
-# Architecture Overview
 
 ![Architecture Overview](01_data_engineering/05_architecture/images/de_architecture.png)
 
