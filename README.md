@@ -79,3 +79,8 @@ Silver Layer
         ↓
 Gold Layer
 (business analytics + ML feature store)
+
+
+# Architecture Overview
+
+![Architecture Overview](images/de_architecture.png)
