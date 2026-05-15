@@ -192,6 +192,8 @@ Examples:
 - patients above average spending
 - population comparisons
 
+ ![Project Overview](images/comparitive_analytics.png)
+
 ---
 
 ## Ranking Analytics
@@ -201,6 +203,8 @@ Examples:
 - highest-cost patients
 - segmented rankings
 - cost rankings by demographic groups
+
+  ![Project Overview](images/ranking_analytics.png)
 
 ---
 
