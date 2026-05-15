@@ -145,6 +145,8 @@ Examples:
 - Medium Risk populations
 - High Risk populations
 
+![Project Overview](images/risk_distribution_chart.png)
+
 ---
 
 ## Financial Analytics
