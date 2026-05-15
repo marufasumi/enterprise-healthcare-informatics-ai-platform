@@ -1,5 +1,9 @@
 # SQL Population Health Analytics Project Overview
 
+![Project Overview](images/infographic_dashboard.png)
+
+
+
 ## Project Name
 
 Enterprise Healthcare SQL Population Health Analytics
