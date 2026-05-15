@@ -447,7 +447,23 @@ Detailed documentation available:
 | notebook21_summary | Executive summary |
 
 ---
+## Scope of Notebook 21
 
+Primary focus:
+
+✓ Population Health Analytics
+
+✓ Risk Stratification
+
+✓ Chronic Disease Analysis
+
+✓ Introductory Financial Analytics
+
+✓ Introductory Utilization Analytics
+
+✓ Advanced SQL Concepts
+
+This notebook serves as the foundation for later healthcare financial analytics and predictive modeling modules.
 # Downstream Applications
 
 Outputs from this module support:
