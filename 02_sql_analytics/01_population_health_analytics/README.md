@@ -157,6 +157,8 @@ Examples:
 - high-cost patients
 - claim burden
 
+  ![Project Overview](images/cost_distribution_chart.png)
+
 ---
 
 ## Chronic Disease Analytics
