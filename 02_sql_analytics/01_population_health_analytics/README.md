@@ -1,46 +1,146 @@
+# Population Health Analytics Platform (SQL Module)
 
-# SQL Population Health Analytics
-
-Enterprise Healthcare SQL Analytics using Population Health Data
+Enterprise Healthcare Analytics using Patient-Level Population Health Data
 
 
 ![Project Overview](images/infographic_dashboard.png)
 
+---
 
+# Executive Summary
 
-# Overview
-
-This module performs healthcare analytics on a unified population health dataset to generate insights related to:
+This module analyzes integrated healthcare population data to generate business insights related to:
 
 - patient demographics
 - chronic disease burden
-- healthcare utilization
 - healthcare spending
 - risk stratification
-- financial analytics
+- utilization patterns
+- healthcare costs
 - population segmentation
 
-The analyses produce business-ready metrics suitable for dashboard reporting, healthcare operations, and downstream predictive modeling.
+The outputs support:
+
+```text
+Healthcare Dashboards
+↓
+Business Intelligence
+↓
+Predictive Modeling
+↓
+Clinical AI Applications
+```
+
+This module is part of a larger enterprise healthcare lakehouse platform built using Databricks and FHIR data.
 
 ---
 
-# Project Objectives
+# Technologies Used
 
-The module addresses healthcare questions such as:
+Core technologies:
+
+- Databricks
+- Spark SQL
+- PySpark
+- Delta Lake
+- FHIR R4 Healthcare Data
+- Medallion Architecture
+- SQL
+- Healthcare Analytics
+
+---
+
+# Platform Architecture
+
+This project belongs to a broader healthcare platform:
+
+```text
+FHIR Resources
+        ↓
+
+Bronze Layer
+(raw healthcare data)
+
+        ↓
+
+Silver Layer
+(clean standardized tables)
+
+        ↓
+
+Gold Layer
+(business analytics tables)
+
+        ↓
+
+SQL Analytics
+
+        ↓
+
+Dashboards
+
+        ↓
+
+Machine Learning
+
+        ↓
+
+Clinical AI
+```
+
+---
+
+# Key Population Health Metrics
+
+| KPI | Value |
+|-----|------:|
+| Total Patients | 555 |
+| Average Age | 46.19 |
+| Minimum Age | 4 |
+| Maximum Age | 114 |
+| Diabetic Patients | 165 |
+| High Risk Patients | 77 |
+| Average Total Claim Cost | $240,605 |
+
+---
+
+# Overview
+
+This module performs healthcare analytics on unified Gold-layer datasets to generate insights regarding:
+
+- population health
+- disease burden
+- healthcare utilization
+- healthcare spending
+- financial risk
+- patient segmentation
+
+The analyses produce business-ready metrics suitable for:
+
+- executive dashboards
+- healthcare operations
+- risk intervention planning
+- predictive modeling
+
+---
+
+# Business Questions Answered
+
+This module addresses questions such as:
 
 ### Population Analytics
 
-- How large is the patient population?
+- How many patients exist?
 - What are demographic characteristics?
-- What age groups dominate?
+- Which age groups dominate?
 
 ---
 
 ### Risk Analytics
 
 - Which patients belong to High Risk populations?
-- What is risk distribution across the population?
-- Which demographics show elevated risk?
+- How is risk distributed?
+- Which populations need intervention?
 
 ---
 
@@ -48,46 +148,62 @@ The module addresses healthcare questions such as:
 
 - Which patients drive healthcare spending?
 - How concentrated are healthcare costs?
-- Which groups contribute most to total spending?
+- Who are highest-cost populations?
 
 ---
 
 ### Chronic Disease Analytics
 
-- What is chronic disease burden?
 - How many diabetic patients exist?
-- How does disease burden relate to spending?
+- What is chronic disease burden?
+- Does disease burden increase spending?
 
 ---
 
-### Utilization Analytics
+### Utilization Analytics (Introductory)
 
 - Which patients have highest encounter counts?
-- Which populations show elevated healthcare utilization?
+- Which groups show elevated utilization burden?
 
 ---
 
 # Dataset
 
-Primary table:
+Primary analytics table:
 
 ```sql
 healthcare_catalog.gold.population_health_dashboard
 ```
 
-Integrated sources include:
+Integrated Gold tables:
 
 ```text
 patient_summary
+
 claim_cost_summary
+
 encounter_utilization_summary
+
 medication_summary
+
 chronic_disease_summary
+
 observation_vitals_labs_summary
+
 procedure_careplan_summary
 ```
 
-The Gold layer provides patient-level business-ready analytics data.
+Purpose:
+
+```text
+Business-ready healthcare analytics
+
+Executive KPI generation
+
+Population health analysis
+
+ML feature generation
+```
 
 ---
 
@@ -104,25 +220,26 @@ sql_analytics/
 │      22_sql_utilization_and_financial_analytics
 │
 ├── docs/
-│      project_overview
-│      dataset_description
-│      business_questions
-│      healthcare_business_insights
-│      execution_guides
-│      data_dictionary
+│      01_project_overview.md
+│      03_business_questions.md
+│      05_population_health_analytics_summary.md
+│      07_healthcare_business_insights.md
+│      10_data_dictionary.md
+│      12_execution_guide.md
+│      13_notebook21_summary.md
 │
 ├── images/
-│      population_health_overview.png
+│      infographic_dashboard.png
 │      risk_distribution_chart.png
+│      chronic_disease_analytics.png
+│      utilization_analytics.png
 │      spending_by_cost_category.png
-│      notebook_workflow.png
+│      ranking_analytics.png
 ```
 
 ---
 
-# Analytics Performed
-
-The module covers several healthcare analytics domains.
+# Healthcare Analytics Domains Covered
 
 ---
 
@@ -132,8 +249,8 @@ Examples:
 
 - patient count
 - average age
-- age distribution
-- demographic segmentation
+- age segmentation
+- demographic analysis
 
 ---
 
@@ -145,19 +262,27 @@ Examples:
 - Medium Risk populations
 - High Risk populations
 
-![Project Overview](images/risk_distribution_chart.png)
+![Risk Distribution](images/risk_distribution_chart.png)
+
+Major finding:
+
+Most patients belong to Low and Medium Risk populations.
 
 ---
 
-## Financial Analytics
+## Financial Analytics (Introductory)
 
 Examples:
 
 - spending distribution
 - high-cost patients
-- claim burden
+- cost burden
 
-  ![Project Overview](images/cost_distribution_chart.png)
+![Financial Analytics](images/cost_distribution_chart.png)
+
+Major finding:
+
+Small populations drive large healthcare spending.
 
 ---
 
@@ -167,21 +292,25 @@ Examples:
 
 - diabetes prevalence
 - chronic disease burden
-- disease-cost relationships
+- disease complexity
 
- ![Project Overview](images/chronic_disease_analytics.png)
+![Chronic Disease Analytics](images/chronic_disease_analytics.png)
+
+Major finding:
+
+Chronic disease burden appears associated with elevated healthcare costs.
 
 ---
 
-## Utilization Analytics
+## Utilization Analytics (Introductory)
 
 Examples:
 
 - encounter burden
-- high utilizers
+- high utilization populations
 - service utilization
- ![Project Overview](images/utilization_analytics.png)
-  
+
+![Utilization Analytics](images/utilization_analytics.png)
 
 ---
 
@@ -189,10 +318,11 @@ Examples:
 
 Examples:
 
-- patients above average spending
-- population comparisons
+- compare spending across populations
+- compare risk categories
+- compare disease burden
 
- ![Project Overview](images/comparitive_analytics.png)
+![Comparative Analytics](images/comparitive_analytics.png)
 
 ---
 
@@ -201,14 +331,14 @@ Examples:
 Examples:
 
 - highest-cost patients
-- segmented rankings
-- cost rankings by demographic groups
+- top spenders
+- demographic rankings
 
-  ![Project Overview](images/ranking_analytics.png)
+![Ranking Analytics](images/ranking_analytics.png)
 
 ---
 
-# Key Findings
+# Major Findings
 
 Population statistics:
 
@@ -234,8 +364,8 @@ Risk distribution:
 
 Age distribution:
 
-| Age Group | Count |
-|-----------|------:|
+| Group | Count |
+|------|------:|
 | Adult | 339 |
 | Senior | 136 |
 | Pediatric | 80 |
@@ -250,9 +380,9 @@ Diabetes burden:
 
 ---
 
-Major insight:
+Major healthcare insight:
 
-A relatively small high-cost population contributes disproportionately to total healthcare spending.
+A relatively small high-cost population contributes disproportionately to overall healthcare spending.
 
 ---
 
@@ -264,12 +394,6 @@ A relatively small high-cost population contributes disproportionately to total 
 
 ---
 
-## Risk Distribution
-
-![Risk Distribution](images/risk_distribution_chart.png)
-
----
-
 ## Spending Distribution
 
 ![Spending Distribution](images/spending_by_cost_category.png)
@@ -278,13 +402,13 @@ A relatively small high-cost population contributes disproportionately to total 
 
 # Business Insights Generated
 
-The analyses support decisions related to:
+The analyses support decisions regarding:
 
-- resource allocation
 - risk intervention
 - chronic disease management
-- healthcare cost reduction
-- utilization management
+- resource allocation
+- utilization reduction
+- cost reduction
 - population health planning
 
 ---
@@ -293,19 +417,19 @@ The analyses support decisions related to:
 
 Outputs include:
 
-✓ population health KPIs
+✓ Population health KPIs
 
-✓ risk segmentation
+✓ Risk segmentation
 
-✓ financial metrics
+✓ Healthcare spending metrics
 
-✓ utilization metrics
+✓ Cost rankings
 
-✓ healthcare business insights
+✓ Dashboard-ready summaries
 
-✓ dashboard-ready summaries
+✓ Healthcare business insights
 
-✓ documentation
+✓ Documentation
 
 ---
 
@@ -313,14 +437,14 @@ Outputs include:
 
 Detailed documentation available:
 
-| File | Description |
-|------|-------------|
-| project_overview | Module overview |
-| dataset_description | Dataset explanation |
+| File | Purpose |
+|------|----------|
+| project_overview | Project explanation |
 | business_questions | Healthcare questions answered |
 | healthcare_business_insights | Major findings |
-| data_dictionary | Variable definitions |
-| execution_guide | Reproducibility instructions |
+| data_dictionary | Column definitions |
+| execution_guide | Reproducibility guide |
+| notebook21_summary | Executive summary |
 
 ---
 
@@ -329,19 +453,13 @@ Detailed documentation available:
 Outputs from this module support:
 
 ```text
-Dashboards
-
+Power BI Dashboards
 ↓
-
 Predictive Modeling
-
 ↓
-
 Machine Learning
-
 ↓
-
-Clinical AI Applications
+Clinical AI
 ```
 
 ---
@@ -356,7 +474,17 @@ Proceed to:
 
 Focus:
 
-Advanced healthcare utilization and financial analytics.
+```text
+Advanced utilization analytics
+
+Financial burden analysis
+
+Cost drivers
+
+Healthcare operations analytics
+
+Resource utilization analytics
+```
 
 ---
 
@@ -368,6 +496,8 @@ Part of:
 Enterprise Healthcare Informatics Platform
 
 Data Engineering
+↓
+Lakehouse Architecture
 ↓
 SQL Analytics
 ↓
