@@ -1,0 +1,11 @@
+table,rows
+patient_clean,555
+encounter_clean,27812
+condition_clean,17253
+observation_clean,131703
+procedure_clean,38528
+medication_request_clean,24256
+immunization_clean,8100
+careplan_clean,1831
+allergy_intolerance_clean,499
+claim_clean,52068
