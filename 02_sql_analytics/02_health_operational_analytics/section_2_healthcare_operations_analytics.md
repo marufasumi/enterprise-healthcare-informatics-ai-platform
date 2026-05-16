@@ -314,8 +314,17 @@ Targeted intervention may improve:
 - workforce allocation
 - care delivery
 - operational cost control
-
 ---
+
+# Operational Burden by Risk Population
+
+The figure below compares emergency utilization and inpatient burden across population health risk categories.
+
+Higher-risk populations demonstrate substantially greater operational demand.
+
+![Healthcare Operations Burden](images/section_2_grouped_bar_chart.png)
+---
+
 
 # Technologies Used
 
