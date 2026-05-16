@@ -1,16 +1,53 @@
 # Sample Data
 
-Contains small healthcare samples for demonstration.
+This folder contains small healthcare dataset samples exported from Silver tables.
 
 Purpose:
 
-- show schema
-- support reproducibility
-- avoid uploading full datasets
+- demonstrate cleaned healthcare tables
+- show schema examples
+- avoid uploading large datasets
 
-Included:
+---
 
-- patient samples
-- encounter samples
-- claims samples
-- dashboard samples
+# Files
+
+Expected examples:
+
+```text
+patient_clean_sample.csv
+encounter_clean_sample.csv
+claim_clean_sample.csv
+```
+
+---
+
+# Source Layer
+
+Silver Layer
+
+Examples:
+
+```text
+healthcare_catalog.silver.patient_clean
+
+healthcare_catalog.silver.encounter_clean
+```
+
+---
+
+# Export Method
+
+Exported using:
+
+PySpark → Pandas → CSV
+
+---
+
+# Purpose
+
+Supports:
+
+- GitHub documentation
+- reproducibility
+- portfolio review
