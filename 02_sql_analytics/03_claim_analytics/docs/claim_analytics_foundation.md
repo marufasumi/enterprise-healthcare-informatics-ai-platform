@@ -25,7 +25,7 @@ This module follows enterprise Databricks Medallion Architecture.
 
 ## Architecture
 
-![Claims Architecture](images/architecture/module28_claims_architecture.png)
+![Claims Architecture](images/bb5a2605-0735-4e14-83ce-31313afdb62b.png)
 
 ---
 
