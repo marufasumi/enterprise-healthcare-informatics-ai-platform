@@ -23,6 +23,10 @@ The objective is to expand the existing healthcare platform beyond EHR/FHIR anal
 
 This module follows enterprise Databricks Medallion Architecture.
 
+## Architecture
+
+![Claims Architecture](images/architecture/module28_claims_architecture.png)
+
 ---
 
 # Business Problem
